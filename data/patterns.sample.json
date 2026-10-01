@@ -1,0 +1,272 @@
+{
+  "patterns": [
+    {
+      "id": "baby-blanket-easy-bernat",
+      "title": "Easy Baby Blanket",
+      "designer": "Yarnspirations",
+      "difficulty": "beginner",
+      "craft": "crochet",
+      "yardageRequired": 1200,
+      "yarnWeight": "worsted",
+      "yarnBrands": ["Bernat", "Loops & Threads", "Big Twist"],
+      "needleSize": "5.5mm",
+      "gauge": { "stitches": 16, "rows": 12, "unit": "4 inches" },
+      "fiberTypes": ["acrylic"],
+      "strandCount": 1,
+      "estimatedHours": 8,
+      "sources": [
+        { "name": "Yarnspirations", "url": "https://www.yarnspirations.com/", "verified": true },
+        { "name": "Ravelry", "url": "https://www.ravelry.com/patterns/", "verified": true, "note": "Yarnspirations pattern, reposted" }
+      ],
+      "matchingScore": {
+        "bernatBlanket": 95,
+        "loopsThreadsImpeccable": 92,
+        "bigTwistValue": 88
+      }
+    },
+    {
+      "id": "cozy-cardigan-worsted",
+      "title": "Cozy Everyday Cardigan",
+      "designer": "Lion Brand Design Team",
+      "difficulty": "intermediate",
+      "craft": "knitting",
+      "yardageRequired": 1800,
+      "yarnWeight": "worsted",
+      "yarnBrands": ["Lion Brand", "Red Heart", "Caron"],
+      "needleSize": "5.5mm (US 9)",
+      "gauge": { "stitches": 18, "rows": 24, "unit": "4 inches" },
+      "fiberTypes": ["acrylic", "wool blend"],
+      "strandCount": 1,
+      "estimatedHours": 12,
+      "sources": [
+        { "name": "Lion Brand", "url": "https://www.lionbrand.com/collections/free-knitting-patterns", "verified": true },
+        { "name": "Ravelry", "url": "https://www.ravelry.com/patterns/", "verified": true, "note": "Lion Brand pattern" }
+      ],
+      "matchingScore": {
+        "redHeartSuperSaver": 90,
+        "caronSimplySoft": 88,
+        "lionBrandAcrylic": 95
+      }
+    },
+    {
+      "id": "chunky-throw-blanket",
+      "title": "Chunky Striped Throw",
+      "designer": "Michaels Creative Team",
+      "difficulty": "beginner",
+      "craft": "crochet",
+      "yardageRequired": 1600,
+      "yarnWeight": "bulky",
+      "yarnBrands": ["Loops & Threads", "Big Twist", "Bernat"],
+      "needleSize": "8mm (US L-11)",
+      "gauge": { "stitches": 9, "rows": 10, "unit": "4 inches" },
+      "fiberTypes": ["acrylic"],
+      "strandCount": 1,
+      "estimatedHours": 6,
+      "sources": [
+        { "name": "Michaels", "url": "https://www.michaels.com/yarn-pattern-library", "verified": true },
+        { "name": "Ravelry", "url": "https://www.ravelry.com/patterns/", "verified": true, "note": "Loops & Threads pattern" },
+        { "name": "Joann Fabrics", "url": "https://www.joann.com/projects/projects-free-patterns/", "verified": true, "note": "Adapted for Big Twist" }
+      ],
+      "matchingScore": {
+        "loopsThreadsCharisma": 95,
+        "bigTwistChunky": 93,
+        "bernatBlanket": 85
+      }
+    },
+    {
+      "id": "summer-tank-sport-weight",
+      "title": "Lightweight Summer Tank",
+      "designer": "Ravelry Community",
+      "difficulty": "intermediate",
+      "craft": "knitting",
+      "yardageRequired": 900,
+      "yarnWeight": "sport",
+      "yarnBrands": ["Lily Sugar'n Cream", "Loops & Threads", "Caron"],
+      "needleSize": "4mm (US 6)",
+      "gauge": { "stitches": 22, "rows": 30, "unit": "4 inches" },
+      "fiberTypes": ["cotton", "cotton blend"],
+      "strandCount": 1,
+      "estimatedHours": 10,
+      "sources": [
+        { "name": "Ravelry", "url": "https://www.ravelry.com/patterns/", "verified": true },
+        { "name": "Yarnspirations", "url": "https://www.yarnspirations.com/", "verified": true, "note": "Lily Sugar'n Cream featured" }
+      ],
+      "matchingScore": {
+        "lilySugarNCream": 95,
+        "loopsThreadsSoftShiny": 85,
+        "caronSimplySoft": 80
+      }
+    },
+    {
+      "id": "baby-booties-fingering",
+      "title": "Quick Baby Booties",
+      "designer": "Knitting Fever",
+      "difficulty": "beginner",
+      "craft": "knitting",
+      "yardageRequired": 200,
+      "yarnWeight": "fingering",
+      "yarnBrands": ["Ella Rae", "Noro", "Araucania"],
+      "needleSize": "2.75mm (US 2)",
+      "gauge": { "stitches": 28, "rows": 36, "unit": "4 inches" },
+      "fiberTypes": ["wool", "wool blend"],
+      "strandCount": 1,
+      "estimatedHours": 3,
+      "sources": [
+        { "name": "Knitting Fever", "url": "https://knittingfever.com/pattern-finder", "verified": true },
+        { "name": "Ravelry", "url": "https://www.ravelry.com/patterns/", "verified": true, "note": "Knitting Fever partner brand" }
+      ],
+      "matchingScore": {
+        "ellaRae": 92,
+        "noro": 88,
+        "araucania": 90
+      }
+    },
+    {
+      "id": "amigurumi-stuffed-animal",
+      "title": "Cute Amigurumi Bear",
+      "designer": "Ravelry Designer Network",
+      "difficulty": "intermediate",
+      "craft": "crochet",
+      "yardageRequired": 300,
+      "yarnWeight": "DK",
+      "yarnBrands": ["Loops & Threads", "Lily Sugar'n Cream", "Big Twist"],
+      "needleSize": "3.5mm (US E-4)",
+      "gauge": { "stitches": 20, "rows": 22, "unit": "4 inches" },
+      "fiberTypes": ["acrylic", "cotton"],
+      "strandCount": 1,
+      "estimatedHours": 5,
+      "sources": [
+        { "name": "Ravelry", "url": "https://www.ravelry.com/patterns/", "verified": true },
+        { "name": "Michaels", "url": "https://www.michaels.com/yarn-pattern-library", "verified": true, "note": "Loops & Threads featured version" },
+        { "name": "Joann Fabrics", "url": "https://www.joann.com/projects/projects-free-patterns/", "verified": true, "note": "Big Twist adaptation" }
+      ],
+      "matchingScore": {
+        "loopsThreadsImpeccable": 90,
+        "lilySugarNCream": 88,
+        "bigTwistValue": 85
+      }
+    },
+    {
+      "id": "mens-crew-neck-sweater",
+      "title": "Classic Crew Neck Pullover",
+      "designer": "Lion Brand Design Team",
+      "difficulty": "advanced",
+      "craft": "knitting",
+      "yardageRequired": 2000,
+      "yarnWeight": "worsted",
+      "yarnBrands": ["Lion Brand", "Patons", "Red Heart"],
+      "needleSize": "5.5mm (US 9)",
+      "gauge": { "stitches": 18, "rows": 24, "unit": "4 inches" },
+      "fiberTypes": ["wool", "acrylic blend"],
+      "strandCount": 1,
+      "estimatedHours": 20,
+      "sources": [
+        { "name": "Lion Brand", "url": "https://www.lionbrand.com/collections/free-knitting-patterns", "verified": true },
+        { "name": "Ravelry", "url": "https://www.ravelry.com/patterns/", "verified": true, "note": "Lion Brand original" },
+        { "name": "Yarnspirations", "url": "https://www.yarnspirations.com/", "verified": true, "note": "Patons version available" }
+      ],
+      "matchingScore": {
+        "pactonsClassicWool": 92,
+        "redHeartSuperSaver": 85,
+        "lionBrandAcrylic": 95
+      }
+    },
+    {
+      "id": "granny-square-afghan",
+      "title": "Classic Granny Square Afghan",
+      "designer": "Yarnspirations",
+      "difficulty": "beginner",
+      "craft": "crochet",
+      "yardageRequired": 2000,
+      "yarnWeight": "worsted",
+      "yarnBrands": ["Caron", "Red Heart", "Loops & Threads", "Big Twist"],
+      "needleSize": "5.5mm (US I-9)",
+      "gauge": { "stitches": 13, "rows": 14, "unit": "4 inches" },
+      "fiberTypes": ["acrylic"],
+      "strandCount": 1,
+      "estimatedHours": 10,
+      "sources": [
+        { "name": "Yarnspirations", "url": "https://www.yarnspirations.com/", "verified": true },
+        { "name": "Ravelry", "url": "https://www.ravelry.com/patterns/", "verified": true, "note": "Caron version posted" },
+        { "name": "Michaels", "url": "https://www.michaels.com/yarn-pattern-library", "verified": true, "note": "Loops & Threads adaptation" },
+        { "name": "Joann Fabrics", "url": "https://www.joann.com/projects/projects-free-patterns/", "verified": true, "note": "Big Twist adaptation" }
+      ],
+      "matchingScore": {
+        "caronSimplySoft": 95,
+        "redHeartSuperSaver": 93,
+        "loopsThreadsImpeccable": 91,
+        "bigTwistValue": 89
+      }
+    },
+    {
+      "id": "lacy-shawl-fingering",
+      "title": "Delicate Lace Shawl",
+      "designer": "Knitting Fever Designers",
+      "difficulty": "advanced",
+      "craft": "knitting",
+      "yardageRequired": 800,
+      "yarnWeight": "fingering",
+      "yarnBrands": ["Noro", "Ella Rae", "Elsebeth Lavold"],
+      "needleSize": "3mm (US 2-3)",
+      "gauge": { "stitches": 26, "rows": 34, "unit": "4 inches" },
+      "fiberTypes": ["wool", "silk blend"],
+      "strandCount": 1,
+      "estimatedHours": 16,
+      "sources": [
+        { "name": "Knitting Fever", "url": "https://knittingfever.com/pattern-finder", "verified": true },
+        { "name": "Ravelry", "url": "https://www.ravelry.com/patterns/", "verified": true, "note": "Luxury yarn pattern" }
+      ],
+      "matchingScore": {
+        "noro": 94,
+        "ellaRae": 92,
+        "elsebethLavold": 95
+      }
+    },
+    {
+      "id": "dishcloth-cotton-dk",
+      "title": "Simple Cotton Dishcloth",
+      "designer": "Ravelry Community",
+      "difficulty": "beginner",
+      "craft": "crochet",
+      "yardageRequired": 150,
+      "yarnWeight": "DK",
+      "yarnBrands": ["Lily Sugar'n Cream", "Big Twist", "Aunt Lydia's"],
+      "needleSize": "4mm (US G-6)",
+      "gauge": { "stitches": 18, "rows": 20, "unit": "4 inches" },
+      "fiberTypes": ["cotton"],
+      "strandCount": 1,
+      "estimatedHours": 1.5,
+      "sources": [
+        { "name": "Ravelry", "url": "https://www.ravelry.com/patterns/", "verified": true },
+        { "name": "Yarnspirations", "url": "https://www.yarnspirations.com/", "verified": true, "note": "Lily Sugar'n Cream & Aunt Lydia's versions" },
+        { "name": "Joann Fabrics", "url": "https://www.joann.com/projects/projects-free-patterns/", "verified": true, "note": "Big Twist cotton version" }
+      ],
+      "matchingScore": {
+        "lilySugarNCream": 95,
+        "bigTwistValue": 90,
+        "auntLydias": 93
+      }
+    }
+  ],
+  "deduplicationNotes": {
+    "strategy": "Patterns are tracked with unique IDs based on normalized title + designer. Multiple sources listed to show where same pattern appears with possible name variations.",
+    "nameVariations": [
+      { "original": "Easy Baby Blanket", "variation": "Simple Baby Afghan", "source": "Ravelry", "note": "Same pattern, different title" },
+      { "original": "Cozy Everyday Cardigan", "variation": "Quick Cardigan", "source": "Lion Brand", "note": "Simplified version title" },
+      { "original": "Chunky Striped Throw", "variation": "Bulky Stripe Blanket", "source": "Joann Fabrics", "note": "Retailer adaptation" }
+    ],
+    "crossSourceTracking": "Same pattern IDs across sources prevent duplication in matching algorithm"
+  },
+  "matchingAlgorithm": {
+    "description": "Patterns include matchingScore for each compatible yarn",
+    "scoreRange": "0-100",
+    "factors": [
+      "Exact gauge match (25 points)",
+      "Yarn weight compatibility (20 points)",
+      "Fiber type match (15 points)",
+      "Strand count compatibility (15 points)",
+      "Yardage fit (15 points)",
+      "Brand official recommendation (10 points)"
+    ]
+  }
+}
