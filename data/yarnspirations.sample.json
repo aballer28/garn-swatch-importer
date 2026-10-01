@@ -1,0 +1,29 @@
+{
+  "source": "Yarnspirations",
+  "lastUpdated": "2026-10-01",
+  "notice": "Illustrative seed records only; verify catalog, availability, and permissions before production use.",
+  "yarns": [
+    {
+      "id": "sample-bernat-acrylic",
+      "brand": "Bernat",
+      "name": "Sample Acrylic Yarn",
+      "weight": "worsted",
+      "fiber": ["acrylic"],
+      "stitchesPer4Inches": { "min": 16, "max": 20 },
+      "yardagePer100g": 180,
+      "strands": 1,
+      "availability": { "status": "unknown", "checkedAt": null, "url": null }
+    },
+    {
+      "id": "sample-caron-acrylic",
+      "brand": "Caron",
+      "name": "Sample Acrylic Double Strand",
+      "weight": "worsted",
+      "fiber": ["acrylic"],
+      "stitchesPer4Inches": { "min": 10, "max": 14 },
+      "yardagePer100g": 180,
+      "strands": 2,
+      "availability": { "status": "unknown", "checkedAt": null, "url": null }
+    }
+  ]
+}

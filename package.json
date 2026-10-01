@@ -1,0 +1,7 @@
+{
+  "name": "yarn-match",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Gauge, yarn, pattern, and strand matching MVP",
+  "scripts": { "demo": "node src/matcher.js" }
+}
