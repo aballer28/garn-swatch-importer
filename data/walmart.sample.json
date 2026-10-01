@@ -1,0 +1,67 @@
+{
+  "source": "Walmart",
+  "lastUpdated": "2026-10-01",
+  "notice": "Illustrative seed records only; verify catalog, availability, and permissions before production use.",
+  "brands": [
+    "Red Heart",
+    "Caron",
+    "Mainstays"
+  ],
+  "yarns": [
+    {
+      "id": "wm-red-heart-super-saver",
+      "brand": "Red Heart",
+      "name": "Super Saver",
+      "weight": "worsted",
+      "fiber": ["acrylic"],
+      "stitchesPer4Inches": { "min": 17, "max": 19 },
+      "yardagePer100g": 185,
+      "strands": 1,
+      "availability": { "status": "unknown", "checkedAt": null, "url": null }
+    },
+    {
+      "id": "wm-red-heart-soft",
+      "brand": "Red Heart",
+      "name": "Red Heart Soft",
+      "weight": "worsted",
+      "fiber": ["acrylic"],
+      "stitchesPer4Inches": { "min": 16, "max": 18 },
+      "yardagePer100g": 175,
+      "strands": 1,
+      "availability": { "status": "unknown", "checkedAt": null, "url": null }
+    },
+    {
+      "id": "wm-caron-simply-soft",
+      "brand": "Caron",
+      "name": "Simply Soft",
+      "weight": "worsted",
+      "fiber": ["acrylic"],
+      "stitchesPer4Inches": { "min": 15, "max": 18 },
+      "yardagePer100g": 160,
+      "strands": 1,
+      "availability": { "status": "unknown", "checkedAt": null, "url": null }
+    },
+    {
+      "id": "wm-caron-one-pound",
+      "brand": "Caron",
+      "name": "Caron One Pound",
+      "weight": "bulky",
+      "fiber": ["acrylic"],
+      "stitchesPer4Inches": { "min": 10, "max": 13 },
+      "yardagePer100g": 110,
+      "strands": 1,
+      "availability": { "status": "unknown", "checkedAt": null, "url": null }
+    },
+    {
+      "id": "wm-mainstays-basic",
+      "brand": "Mainstays",
+      "name": "Mainstays Basic Yarn",
+      "weight": "worsted",
+      "fiber": ["acrylic"],
+      "stitchesPer4Inches": { "min": 16, "max": 20 },
+      "yardagePer100g": 180,
+      "strands": 1,
+      "availability": { "status": "unknown", "checkedAt": null, "url": null }
+    }
+  ]
+}
