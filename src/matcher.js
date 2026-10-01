@@ -1,4 +1,5 @@
 const WEIGHTS = ["lace", "fingering", "sport", "dk", "worsted", "aran", "bulky", "super-bulky", "jumbo"];
+const { toRange } = require("./schema");
 
 function midpoint(range) {
   return (range.min + range.max) / 2;
@@ -23,11 +24,15 @@ function weightScore(actual, target) {
  * This is a starting point, not a substitute for a swatch.
  */
 function scoreMatch(yarn, pattern) {
-  const gauge = midpoint(yarn.stitchesPer4Inches);
-  const gaugeMatch = gaugeScore(gauge, pattern.stitchesPer4Inches);
-  const weightMatch = weightScore(yarn.weight, pattern.weight);
-  const fiberMatch = !pattern.fiber || yarn.fiber.includes(pattern.fiber) ? 100 : 45;
-  const strandMatch = yarn.strands === (pattern.strands || 1) ? 100 : 70;
+  const gauge = midpoint(toRange(yarn.stitchesPer4Inches));
+  const patternGauge = pattern.stitchesPer4Inches ?? pattern.gauge?.stitches;
+  const gaugeMatch = gaugeScore(gauge, midpoint(toRange(patternGauge)));
+  const patternWeight = pattern.weight || pattern.yarnWeight;
+  const patternFibers = pattern.fiberTypes || (pattern.fiber ? [pattern.fiber] : []);
+  const weightMatch = weightScore(yarn.weight, String(patternWeight).toLowerCase());
+  const fiberMatch = !patternFibers.length || patternFibers.some((fiber) => yarn.fiber.includes(fiber)) ? 100 : 45;
+  const targetStrands = pattern.strands || pattern.strandCount || 1;
+  const strandMatch = yarn.strands === targetStrands ? 100 : 70;
 
   const score = Math.round(
     gaugeMatch * 0.55 + weightMatch * 0.2 + fiberMatch * 0.15 + strandMatch * 0.1

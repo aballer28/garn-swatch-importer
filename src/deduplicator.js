@@ -46,9 +46,13 @@ function titleSimilarity(title1, title2) {
  */
 function gaugeCompatibility(gauge1, gauge2, threshold = 3) {
   if (!gauge1 || !gauge2) return 50;
-  
-  const mid1 = (gauge1.stitches.min + gauge1.stitches.max) / 2;
-  const mid2 = (gauge2.stitches.min + gauge2.stitches.max) / 2;
+  const stitches1 = gauge1.stitches || gauge1;
+  const stitches2 = gauge2.stitches || gauge2;
+  const range1 = typeof stitches1 === 'number' ? { min: stitches1, max: stitches1 } : stitches1;
+  const range2 = typeof stitches2 === 'number' ? { min: stitches2, max: stitches2 } : stitches2;
+  if (!range1?.min || !range2?.min) return 50;
+  const mid1 = (range1.min + range1.max) / 2;
+  const mid2 = (range2.min + range2.max) / 2;
   const diff = Math.abs(mid1 - mid2);
   
   if (diff <= threshold) return 100;
