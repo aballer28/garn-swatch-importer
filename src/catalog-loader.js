@@ -70,16 +70,18 @@ function loadCatalog(filename) {
  * Load and deduplicate patterns
  * 
  * @param {string|Array} [source] - Optional file path or pattern array
+ * @param {object} [options] - Optional options such as dataDir
  * @returns {Array} Deduplicated patterns array with metadata attached
  */
-function loadPatterns(source) {
+function loadPatterns(source, options = {}) {
   let rawPatterns;
+  const dataDir = options.dataDir || DEFAULT_DATA_DIR;
 
   if (Array.isArray(source)) {
     rawPatterns = source;
   } else {
-    const filePath = source || path.join(DEFAULT_DATA_DIR, 'patterns.sample.json');
-    const resolvedPath = resolveFilePath(filePath, DEFAULT_DATA_DIR);
+    const filePath = source || path.join(dataDir, 'patterns.sample.json');
+    const resolvedPath = resolveFilePath(filePath, dataDir);
 
     if (!fs.existsSync(resolvedPath)) {
       throw new Error(`Pattern file not found: ${filePath} (resolved to ${resolvedPath})`);
@@ -97,7 +99,6 @@ function loadPatterns(source) {
   patterns.summary = dedupeResult.summary;
   patterns.duplicatesRemoved = dedupeResult.patternsRemoved;
   patterns.duplicateGroupsFound = dedupeResult.duplicateGroupsFound;
-  patterns.patterns = patterns;
 
   return patterns;
 }
@@ -170,7 +171,13 @@ function loadCatalogs(options = {}) {
   }
 
   // Load and deduplicate patterns
-  const patterns = loadPatterns(patternsSource || path.join(dataDir, 'patterns.sample.json'));
+  let resolvedPatternsSource = patternsSource;
+  if (typeof patternsSource === 'string') {
+    resolvedPatternsSource = resolveFilePath(patternsSource, dataDir);
+  } else if (!patternsSource) {
+    resolvedPatternsSource = path.join(dataDir, 'patterns.sample.json');
+  }
+  const patterns = loadPatterns(resolvedPatternsSource, { dataDir });
   const duplicatesRemoved = patterns.duplicatesRemoved || 0;
   const availableBrands = Array.from(brandsSet).sort();
 
@@ -189,7 +196,7 @@ function loadCatalogs(options = {}) {
   };
 
   const isDefaultDir = dataDir === DEFAULT_DATA_DIR && !patternsSource;
-  if (isDefaultDir || !defaultCatalog) {
+  if (isDefaultDir) {
     defaultCatalog = unifiedCatalog;
   }
   return unifiedCatalog;
@@ -269,7 +276,7 @@ function getAvailableBrands(catalog) {
     catalog = defaultCatalog;
   }
   if (Array.isArray(catalog.brands)) {
-    return catalog.brands;
+    return catalog.brands.slice();
   }
   const yarns = Array.isArray(catalog) ? catalog : (catalog.yarns || []);
   const brands = new Set();
