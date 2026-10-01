@@ -8,6 +8,22 @@ The first source adapter is designed around Yarnspirations and its brands, inclu
 
 This first commit deliberately uses normalized sample data rather than scraping or claiming live inventory. Before importing production catalog or stock data, obtain permission or use an approved feed/API and respect the site's terms and robots rules.
 
+## Interactive CLI Tool
+
+Run the interactive CLI:
+
+```bash
+npm run cli
+```
+
+The CLI main menu provides:
+1. **Yarn → Patterns Search:** Input yarn specifications (stitch gauge, row gauge, yarn weight, total yardage, fiber) to find the top 10 compatible patterns with match scores (0-100), craft type, difficulty, and tailored recommendations.
+2. **Pattern → Yarns Search:** Input pattern requirements (category, craft type, stitch gauge, row gauge, yarn weight, yardage needed, fiber) to find the top 10 compatible yarns from the unified catalog with match scores, brand, availability, price, and skein estimates.
+3. **View All Brands:** List all yarn brands in the catalog with total yarn counts per brand.
+4. **Exit:** Return to the main menu after each search until ready to exit.
+
+Results are categorized into match quality tiers (**Perfect**, **Good**, **Acceptable**, **Poor**) and formatted as clear tables with recommendations.
+
 ## Run the matching demo
 
 ```bash

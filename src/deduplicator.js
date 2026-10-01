@@ -5,7 +5,21 @@
  * and merges them into unified pattern records with cross-source tracking.
  */
 
+const fs = require('fs');
+const path = require('path');
 const Levenshtein = require('levenshtein');
+
+/**
+ * Extract numerical stitch gauge from either number or range object
+ */
+function getStitchGauge(gauge) {
+  if (!gauge || gauge.stitches === undefined || gauge.stitches === null) return null;
+  if (typeof gauge.stitches === 'number') return gauge.stitches;
+  if (typeof gauge.stitches.min === 'number' && typeof gauge.stitches.max === 'number') {
+    return (gauge.stitches.min + gauge.stitches.max) / 2;
+  }
+  return null;
+}
 
 /**
  * Normalize pattern title for comparison
@@ -47,8 +61,9 @@ function titleSimilarity(title1, title2) {
 function gaugeCompatibility(gauge1, gauge2, threshold = 3) {
   if (!gauge1 || !gauge2) return 50;
   
-  const mid1 = (gauge1.stitches.min + gauge1.stitches.max) / 2;
-  const mid2 = (gauge2.stitches.min + gauge2.stitches.max) / 2;
+  const mid1 = getStitchGauge(gauge1);
+  const mid2 = getStitchGauge(gauge2);
+  if (mid1 === null || mid2 === null) return 50;
   const diff = Math.abs(mid1 - mid2);
   
   if (diff <= threshold) return 100;
@@ -235,6 +250,17 @@ function reportDuplicates(duplicateGroups) {
   }));
 }
 
+/**
+ * Load patterns from JSON file and deduplicate them
+ */
+function loadPatterns(filePath = path.join(__dirname, '../data/patterns.sample.json')) {
+  const content = fs.readFileSync(filePath, 'utf8');
+  const data = JSON.parse(content);
+  const rawPatterns = Array.isArray(data) ? data : (data.patterns || []);
+  const result = deduplicatePatterns(rawPatterns);
+  return result.deduplicatedPatterns;
+}
+
 // Demo
 if (require.main === module) {
   const samplePatterns = [
@@ -277,6 +303,7 @@ if (require.main === module) {
 }
 
 module.exports = {
+  getStitchGauge,
   normalizeTitle,
   titleSimilarity,
   gaugeCompatibility,
@@ -284,5 +311,6 @@ module.exports = {
   findDuplicateGroups,
   mergeDuplicates,
   deduplicatePatterns,
-  reportDuplicates
+  reportDuplicates,
+  loadPatterns
 };
