@@ -1,7 +1,7 @@
 {
   "source": "Walmart",
   "lastUpdated": "2026-10-01",
-  "notice": "Illustrative seed records only; verify catalog, availability, and permissions before production use.",
+  "notice": "Illustrative seed records only; verify catalog, availability, and permissions before production use. This source carries budget-friendly, mass-market brands.",
   "brands": [
     "Red Heart",
     "Caron",
@@ -9,7 +9,7 @@
   ],
   "yarns": [
     {
-      "id": "wm-red-heart-super-saver",
+      "id": "red-heart-super-saver",
       "brand": "Red Heart",
       "name": "Super Saver",
       "weight": "worsted",
@@ -20,7 +20,7 @@
       "availability": { "status": "unknown", "checkedAt": null, "url": null }
     },
     {
-      "id": "wm-red-heart-soft",
+      "id": "red-heart-soft",
       "brand": "Red Heart",
       "name": "Red Heart Soft",
       "weight": "worsted",
@@ -31,7 +31,7 @@
       "availability": { "status": "unknown", "checkedAt": null, "url": null }
     },
     {
-      "id": "wm-caron-simply-soft",
+      "id": "caron-simply-soft",
       "brand": "Caron",
       "name": "Simply Soft",
       "weight": "worsted",
@@ -42,7 +42,7 @@
       "availability": { "status": "unknown", "checkedAt": null, "url": null }
     },
     {
-      "id": "wm-caron-one-pound",
+      "id": "caron-one-pound",
       "brand": "Caron",
       "name": "Caron One Pound",
       "weight": "bulky",
@@ -53,7 +53,7 @@
       "availability": { "status": "unknown", "checkedAt": null, "url": null }
     },
     {
-      "id": "wm-mainstays-basic",
+      "id": "mainstays-basic",
       "brand": "Mainstays",
       "name": "Mainstays Basic Yarn",
       "weight": "worsted",

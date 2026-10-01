@@ -1,28 +1,47 @@
 {
   "source": "Yarnspirations",
   "lastUpdated": "2026-10-01",
-  "notice": "Illustrative seed records only; verify catalog, availability, and permissions before production use.",
+  "notice": "Illustrative seed records only; verify catalog, availability, and permissions before production use. This source carries exclusive Yarnspirations/Spinrite brands only.",
+  "brands": [
+    "Bernat",
+    "Patons",
+    "Lily Sugar'n Cream",
+    "Aunt Lydia's",
+    "Coats & Clark",
+    "Phentex"
+  ],
   "yarns": [
     {
-      "id": "sample-bernat-acrylic",
+      "id": "bernat-blanket",
       "brand": "Bernat",
-      "name": "Sample Acrylic Yarn",
-      "weight": "worsted",
-      "fiber": ["acrylic"],
-      "stitchesPer4Inches": { "min": 16, "max": 20 },
-      "yardagePer100g": 180,
+      "name": "Blanket Yarn",
+      "weight": "super-bulky",
+      "fiber": ["polyester"],
+      "stitchesPer4Inches": { "min": 6, "max": 8 },
+      "yardagePer100g": 50,
       "strands": 1,
       "availability": { "status": "unknown", "checkedAt": null, "url": null }
     },
     {
-      "id": "sample-caron-acrylic",
-      "brand": "Caron",
-      "name": "Sample Acrylic Double Strand",
+      "id": "patons-classic-wool",
+      "brand": "Patons",
+      "name": "Classic Wool Worsted",
       "weight": "worsted",
-      "fiber": ["acrylic"],
-      "stitchesPer4Inches": { "min": 10, "max": 14 },
-      "yardagePer100g": 180,
-      "strands": 2,
+      "fiber": ["wool"],
+      "stitchesPer4Inches": { "min": 16, "max": 20 },
+      "yardagePer100g": 190,
+      "strands": 1,
+      "availability": { "status": "unknown", "checkedAt": null, "url": null }
+    },
+    {
+      "id": "lily-sugar-n-cream",
+      "brand": "Lily Sugar'n Cream",
+      "name": "Sugar'n Cream Cotton",
+      "weight": "sport",
+      "fiber": ["cotton"],
+      "stitchesPer4Inches": { "min": 20, "max": 24 },
+      "yardagePer100g": 220,
+      "strands": 1,
       "availability": { "status": "unknown", "checkedAt": null, "url": null }
     }
   ]
