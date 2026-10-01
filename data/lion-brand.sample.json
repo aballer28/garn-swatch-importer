@@ -1,0 +1,43 @@
+{
+  "source": "Lion Brand Yarn",
+  "lastUpdated": "2026-10-01",
+  "notice": "Illustrative seed records only; verify catalog, availability, and permissions before production use.",
+  "brands": [
+    "Lion Brand"
+  ],
+  "yarns": [
+    {
+      "id": "lb-wool-ease",
+      "brand": "Lion Brand",
+      "name": "Wool-Ease",
+      "weight": "worsted",
+      "fiber": ["wool", "acrylic"],
+      "stitchesPer4Inches": { "min": 16, "max": 20 },
+      "yardagePer100g": 190,
+      "strands": 1,
+      "availability": { "status": "unknown", "checkedAt": null, "url": null }
+    },
+    {
+      "id": "lb-mandala",
+      "brand": "Lion Brand",
+      "name": "Mandala",
+      "weight": "bulky",
+      "fiber": ["acrylic"],
+      "stitchesPer4Inches": { "min": 8, "max": 11 },
+      "yardagePer100g": 80,
+      "strands": 1,
+      "availability": { "status": "unknown", "checkedAt": null, "url": null }
+    },
+    {
+      "id": "lb-homespun",
+      "brand": "Lion Brand",
+      "name": "Homespun",
+      "weight": "bulky",
+      "fiber": ["acrylic"],
+      "stitchesPer4Inches": { "min": 7, "max": 10 },
+      "yardagePer100g": 70,
+      "strands": 1,
+      "availability": { "status": "unknown", "checkedAt": null, "url": null }
+    }
+  ]
+}
