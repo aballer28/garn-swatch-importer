@@ -1,0 +1,43 @@
+{
+  "source": "Joann Fabrics - Big Twist",
+  "lastUpdated": "2026-10-01",
+  "notice": "Illustrative seed records only; verify catalog, availability, and permissions before production use. Big Twist is Joann Fabrics' exclusive house brand for yarn.",
+  "brands": [
+    "Big Twist"
+  ],
+  "yarns": [
+    {
+      "id": "big-twist-value",
+      "brand": "Big Twist",
+      "name": "Big Twist Value",
+      "weight": "worsted",
+      "fiber": ["acrylic"],
+      "stitchesPer4Inches": { "min": 16, "max": 20 },
+      "yardagePer100g": 190,
+      "strands": 1,
+      "availability": { "status": "unknown", "checkedAt": null, "url": null }
+    },
+    {
+      "id": "big-twist-soft",
+      "brand": "Big Twist",
+      "name": "Big Twist Soft",
+      "weight": "worsted",
+      "fiber": ["acrylic"],
+      "stitchesPer4Inches": { "min": 16, "max": 19 },
+      "yardagePer100g": 180,
+      "strands": 1,
+      "availability": { "status": "unknown", "checkedAt": null, "url": null }
+    },
+    {
+      "id": "big-twist-chunky",
+      "brand": "Big Twist",
+      "name": "Big Twist Chunky",
+      "weight": "bulky",
+      "fiber": ["acrylic"],
+      "stitchesPer4Inches": { "min": 12, "max": 15 },
+      "yardagePer100g": 120,
+      "strands": 1,
+      "availability": { "status": "unknown", "checkedAt": null, "url": null }
+    }
+  ]
+}
