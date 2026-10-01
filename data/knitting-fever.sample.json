@@ -1,0 +1,48 @@
+{
+  "source": "Knitting Fever",
+  "lastUpdated": "2026-10-01",
+  "notice": "Illustrative seed records only; verify catalog, availability, and permissions before production use.",
+  "brands": [
+    "Noro",
+    "Araucania",
+    "Ella Rae",
+    "Elsebeth Lavold",
+    "EuroYarns",
+    "Juniper Moon Farm"
+  ],
+  "yarns": [
+    {
+      "id": "kf-noro-silk-garden",
+      "brand": "Noro",
+      "name": "Silk Garden",
+      "weight": "dk",
+      "fiber": ["silk", "wool", "cotton"],
+      "stitchesPer4Inches": { "min": 22, "max": 26 },
+      "yardagePer100g": 150,
+      "strands": 1,
+      "availability": { "status": "unknown", "checkedAt": null, "url": null }
+    },
+    {
+      "id": "kf-ella-rae-cozy",
+      "brand": "Ella Rae",
+      "name": "Cozy Alpaca Blend",
+      "weight": "bulky",
+      "fiber": ["alpaca", "wool"],
+      "stitchesPer4Inches": { "min": 11, "max": 15 },
+      "yardagePer100g": 110,
+      "strands": 1,
+      "availability": { "status": "unknown", "checkedAt": null, "url": null }
+    },
+    {
+      "id": "kf-araucania-ruble",
+      "brand": "Araucania",
+      "name": "Ruble Merino",
+      "weight": "sport",
+      "fiber": ["merino"],
+      "stitchesPer4Inches": { "min": 20, "max": 24 },
+      "yardagePer100g": 200,
+      "strands": 1,
+      "availability": { "status": "unknown", "checkedAt": null, "url": null }
+    }
+  ]
+}
