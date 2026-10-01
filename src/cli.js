@@ -75,8 +75,8 @@ async function promptPositiveNumber(prompt, fieldName, example = '18') {
   while (true) {
     const input = await prompt.ask(`  Enter ${fieldName} (e.g., ${example}): `);
     if (input === null) return null; // Stream closed
-    const num = parseFloat(input);
-    if (!isNaN(num) && num > 0) {
+    const num = Number(input);
+    if (Number.isFinite(num) && num > 0) {
       return num;
     }
     console.log(`  ❌ Invalid input. Please enter a valid positive number for ${fieldName}.`);
@@ -93,8 +93,8 @@ async function promptOptionalPositiveNumber(prompt, fieldName, example = '24') {
     if (input === '') {
       return null;
     }
-    const num = parseFloat(input);
-    if (!isNaN(num) && num > 0) {
+    const num = Number(input);
+    if (Number.isFinite(num) && num > 0) {
       return num;
     }
     console.log(`  ❌ Invalid input. Please enter a positive number or press Enter to skip.`);
