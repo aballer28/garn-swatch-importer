@@ -9,6 +9,7 @@
   "scripts": {
     "demo": "node src/matcher.js",
     "dedupe": "node src/deduplicator.js",
-    "test": "node src/deduplicator.js && node src/matcher.js"
+    "test": "node src/deduplicator.js && node src/matcher.js && node test/test.js",
+    "cli": "node src/cli.js"
   }
 }
