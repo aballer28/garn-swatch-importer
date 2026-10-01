@@ -3,5 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "description": "Gauge, yarn, pattern, and strand matching MVP",
-  "scripts": { "demo": "node src/matcher.js" }
+  "dependencies": {
+    "levenshtein": "^1.0.5"
+  },
+  "scripts": {
+    "demo": "node src/matcher.js",
+    "dedupe": "node src/deduplicator.js",
+    "test": "node src/deduplicator.js && node src/matcher.js"
+  }
 }
