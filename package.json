@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "description": "Gauge, yarn, pattern, and strand matching MVP",
+  "main": "src/catalog-loader.js",
   "dependencies": {
     "levenshtein": "^1.0.5"
   },
   "scripts": {
     "demo": "node src/matcher.js",
     "dedupe": "node src/deduplicator.js",
-    "test": "node src/deduplicator.js && node src/matcher.js"
+    "catalog": "node src/catalog-loader.js",
+    "test": "node src/deduplicator.js && node src/matcher.js && node src/catalog-loader.js && node --test test/catalog-loader.test.js"
   }
 }

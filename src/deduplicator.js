@@ -47,8 +47,18 @@ function titleSimilarity(title1, title2) {
 function gaugeCompatibility(gauge1, gauge2, threshold = 3) {
   if (!gauge1 || !gauge2) return 50;
   
-  const mid1 = (gauge1.stitches.min + gauge1.stitches.max) / 2;
-  const mid2 = (gauge2.stitches.min + gauge2.stitches.max) / 2;
+  const getMid = (g) => {
+    if (!g || g.stitches === undefined || g.stitches === null) return null;
+    if (typeof g.stitches === 'number') return g.stitches;
+    if (typeof g.stitches === 'object' && typeof g.stitches.min === 'number' && typeof g.stitches.max === 'number') {
+      return (g.stitches.min + g.stitches.max) / 2;
+    }
+    return null;
+  };
+
+  const mid1 = getMid(gauge1);
+  const mid2 = getMid(gauge2);
+  if (mid1 === null || mid2 === null) return 50;
   const diff = Math.abs(mid1 - mid2);
   
   if (diff <= threshold) return 100;
@@ -67,8 +77,10 @@ function isDuplicate(pattern1, pattern2) {
     pattern1.gauge || { stitches: { min: 0, max: 0 } },
     pattern2.gauge || { stitches: { min: 0, max: 0 } }
   );
-  const craftMatch = pattern1.craft === pattern2.craft ? 100 : 0;
-  const weightMatch = pattern1.yarnWeight === pattern2.yarnWeight ? 100 : 50;
+  const craftMatch = (pattern1.craft || '').toLowerCase() === (pattern2.craft || '').toLowerCase() ? 100 : 0;
+  const p1Weight = (pattern1.yarnWeight || pattern1.weight || '').toLowerCase();
+  const p2Weight = (pattern2.yarnWeight || pattern2.weight || '').toLowerCase();
+  const weightMatch = (p1Weight && p2Weight && p1Weight === p2Weight) ? 100 : 50;
   
   // Weighted score: title is primary factor
   const duplicateScore = Math.round(
