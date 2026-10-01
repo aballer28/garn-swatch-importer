@@ -119,8 +119,10 @@ function loadCatalogs(options = {}) {
     if (options.dataDir) {
       dataDir = path.resolve(process.cwd(), options.dataDir);
     }
-    if (options.patternsFile || options.patterns) {
-      patternsSource = options.patternsFile || options.patterns;
+    if (Object.prototype.hasOwnProperty.call(options, 'patternsFile')) {
+      patternsSource = options.patternsFile;
+    } else if (Object.prototype.hasOwnProperty.call(options, 'patterns')) {
+      patternsSource = options.patterns;
     }
   }
 
@@ -132,9 +134,8 @@ function loadCatalogs(options = {}) {
   const loadedCatalogs = [];
 
   for (const file of files) {
-    // Only load JSON files and skip pattern files
+    // Only load JSON files
     if (!file.endsWith('.json')) continue;
-    if (file.toLowerCase().includes('pattern')) continue;
 
     const fullPath = path.join(dataDir, file);
     try {
@@ -143,8 +144,8 @@ function loadCatalogs(options = {}) {
         catalog.__filename = file;
         loadedCatalogs.push(catalog);
       }
-    } catch {
-      // Skip non-json or unreadable files gracefully
+    } catch (err) {
+      throw new Error(`Failed to load catalog from ${fullPath}: ${err.message}`);
     }
   }
 

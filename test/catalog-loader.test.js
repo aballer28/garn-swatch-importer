@@ -148,16 +148,49 @@ test('loadCatalogs dynamically discovers and loads new brand catalogs without co
     };
     fs.writeFileSync(path.join(tmpDir, 'future-brand.sample.json'), JSON.stringify(brand3));
 
+    const brand4 = {
+      source: 'Patternworks',
+      yarns: [
+        { id: 'patternworks-1', brand: 'Patternworks', name: 'Patternworks Worsted', weight: 'worsted' }
+      ]
+    };
+    fs.writeFileSync(path.join(tmpDir, 'patternworks.sample.json'), JSON.stringify(brand4));
+
     const result = loadCatalogs(tmpDir);
-    assert.strictEqual(result.metadata.sourcesLoaded, 3);
-    assert.strictEqual(result.yarns.length, 3);
+    assert.strictEqual(result.metadata.sourcesLoaded, 4);
+    assert.strictEqual(result.yarns.length, 4);
     assert.ok(result.yarns.some(y => y.id === 'alpha-1'));
     assert.ok(result.yarns.some(y => y.id === 'mainstays-chenille'));
     assert.ok(result.yarns.some(y => y.id === 'future-soft'));
+    assert.ok(result.yarns.some(y => y.id === 'patternworks-1'));
 
     assert.ok(result.brands.includes('Alpha Yarn'));
     assert.ok(result.brands.includes('Mainstays'));
     assert.ok(result.brands.includes('FutureFiber'));
+    assert.ok(result.brands.includes('Patternworks'));
+  } finally {
+    fs.rmSync(tmpDir, { recursive: true, force: true });
+  }
+});
+
+test('loadCatalogs honors an explicitly empty patterns array', () => {
+  const result = loadCatalogs({ patterns: [] });
+  assert.ok(Array.isArray(result.patterns));
+  assert.strictEqual(result.patterns.length, 0);
+  assert.strictEqual(result.metadata.patternsTotal, 0);
+});
+
+test('loadCatalogs reports malformed catalog files with their path', () => {
+  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'catalog-test-'));
+
+  try {
+    const malformedCatalog = path.join(tmpDir, 'broken.sample.json');
+    fs.writeFileSync(malformedCatalog, '{');
+
+    assert.throws(
+      () => loadCatalogs(tmpDir),
+      error => error.message.includes(malformedCatalog) && error.message.includes('Failed to load catalog')
+    );
   } finally {
     fs.rmSync(tmpDir, { recursive: true, force: true });
   }
