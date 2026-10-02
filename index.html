@@ -102,6 +102,7 @@
 
         input[type="number"],
         input[type="text"],
+        input[type="url"],
         select {
             width: 100%;
             padding: 12px;
@@ -113,6 +114,7 @@
 
         input[type="number"]:focus,
         input[type="text"]:focus,
+        input[type="url"]:focus,
         select:focus {
             outline: none;
             border-color: #667eea;
@@ -472,7 +474,7 @@
             </div>
             <div class="form-group">
                 <label for="y2p-skein-yardage">Yardage per your skein (optional, for skein estimate)</label>
-                    <input type="number" id="y2p-skein-yardage" min="1" step="any" placeholder="e.g., 220">
+                <input type="number" id="y2p-skein-yardage" min="1" step="any" placeholder="e.g., 220">
             </div>
             <div class="form-row">
                 <div class="form-group">

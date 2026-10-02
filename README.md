@@ -32,6 +32,12 @@ node src/matcher.js
 
 The matcher returns a score from 0 to 100 and includes single-strand and double-strand options. A missing yarn can be entered by supplying its gauge and yarn weight.
 
+## Personal pattern matching
+
+Open `index.html` in a browser to enter yarn and pattern-label facts for a compatibility estimate. Pattern name, designer/source, craft, item type, yarn weight, gauge, needle or hook size, required yardage, sizes, and a direct pattern-page link are shown with the calculated match percentage. If yardage per skein is provided, the page estimates the number of skeins needed.
+
+Entries are used in the current page session and are not saved or uploaded by this app. An optional pattern photo URL loads the image from its host; only use an image you have permission to display, provide its credit, and link to the official pattern page. The photo is displayed without cropping. Compatibility is an estimate; swatch to confirm gauge.
+
 ## Planned data sources
 
 - Yarnspirations-approved catalog/inventory feed
