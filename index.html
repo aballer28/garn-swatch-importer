@@ -393,7 +393,99 @@
                 <input type="text" id="y2p-fiber" placeholder="e.g., acrylic, wool">
             </div>
 
-            <button onclick="searchYarnToPatterns()">Search Patterns</button>
+            <h3 style="margin: 28px 0 12px;">Pattern details</h3>
+            <p class="info-text" style="margin-bottom: 16px;">Enter facts from a pattern you own or are authorized to use. These details are used only in this page session.</p>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="pattern-title">Pattern name</label>
+                    <input type="text" id="pattern-title" placeholder="e.g., Everyday Cardigan">
+                </div>
+                <div class="form-group">
+                    <label for="pattern-designer">Designer / source</label>
+                    <input type="text" id="pattern-designer" placeholder="e.g., DROPS Design">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="pattern-url">Pattern website link</label>
+                    <input type="url" id="pattern-url" placeholder="https://...">
+                </div>
+                <div class="form-group">
+                    <label for="pattern-craft">Knit or crochet</label>
+                    <select id="pattern-craft">
+                        <option value="">Select craft...</option>
+                        <option value="knitting">Knitting</option>
+                        <option value="crochet">Crochet</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="pattern-item-type">Finished item type</label>
+                    <input type="text" id="pattern-item-type" placeholder="e.g., sweater, shawl, blanket">
+                </div>
+                <div class="form-group">
+                    <label for="pattern-weight">Yarn weight</label>
+                    <select id="pattern-weight">
+                        <option value="">Select weight...</option>
+                        <option value="lace">Lace</option>
+                        <option value="fingering">Fingering</option>
+                        <option value="sport">Sport</option>
+                        <option value="dk">DK</option>
+                        <option value="worsted">Worsted</option>
+                        <option value="aran">Aran</option>
+                        <option value="bulky">Bulky</option>
+                        <option value="super-bulky">Super Bulky</option>
+                        <option value="jumbo">Jumbo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="pattern-stitches">Gauge: stitches per 4 inches</label>
+                    <input type="number" id="pattern-stitches" min="1" step="any" placeholder="e.g., 18">
+                </div>
+                <div class="form-group">
+                    <label for="pattern-rows">Gauge: rows per 4 inches (optional)</label>
+                    <input type="number" id="pattern-rows" min="1" step="any" placeholder="e.g., 24">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="pattern-needle-size">Needle or hook size</label>
+                    <input type="text" id="pattern-needle-size" placeholder="e.g., 5 mm / US 8">
+                </div>
+                <div class="form-group">
+                    <label for="pattern-yardage">Required yarn (yards)</label>
+                    <input type="number" id="pattern-yardage" min="1" step="any" placeholder="e.g., 1200">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="pattern-sizes">Available sizes</label>
+                    <input type="text" id="pattern-sizes" placeholder="e.g., XS–5X">
+                </div>
+                <div class="form-group">
+                    <label for="pattern-fiber">Fiber noted by pattern (optional)</label>
+                    <input type="text" id="pattern-fiber" placeholder="e.g., wool">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="y2p-skein-yardage">Yardage per your skein (optional, for skein estimate)</label>
+                    <input type="number" id="y2p-skein-yardage" min="1" step="any" placeholder="e.g., 220">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="pattern-photo-url">Optional pattern photo URL</label>
+                    <input type="url" id="pattern-photo-url" placeholder="https://...">
+                    <p class="info-text">Only use an image you have permission to display. The image is shown uncropped and is not uploaded by this app.</p>
+                </div>
+                <div class="form-group">
+                    <label for="pattern-photo-credit">Photo credit (if using a photo)</label>
+                    <input type="text" id="pattern-photo-credit" placeholder="e.g., DROPS Design">
+                </div>
+            </div>
+            <button onclick="searchYarnToPatterns()">Check compatibility</button>
             <div id="y2p-result" class="hidden"></div>
         </div>
 
@@ -527,8 +619,124 @@
             resultDiv.classList.remove('hidden');
         }
 
+        function getSafeWebUrl(value) {
+            try {
+                const url = new URL(value);
+                return ['http:', 'https:'].includes(url.protocol) ? url.href : null;
+            } catch {
+                return null;
+            }
+        }
+
+        function appendPatternDetail(container, label, value) {
+            if (value === '' || value == null) return;
+            const paragraph = document.createElement('p');
+            const strong = document.createElement('strong');
+            strong.textContent = `${label}: `;
+            paragraph.append(strong, document.createTextNode(String(value)));
+            container.appendChild(paragraph);
+        }
+
         function searchYarnToPatterns() {
-            alert('Yarn → Patterns search coming soon! This will show compatible patterns for your yarn specs.');
+            const value = id => document.getElementById(id).value.trim();
+            const number = id => {
+                const parsed = Number(value(id));
+                return Number.isFinite(parsed) && parsed > 0 ? parsed : null;
+            };
+            const pattern = {
+                title: value('pattern-title'),
+                designer: value('pattern-designer'),
+                url: getSafeWebUrl(value('pattern-url')),
+                craft: value('pattern-craft'),
+                itemType: value('pattern-item-type'),
+                weight: value('pattern-weight'),
+                stitches: number('pattern-stitches'),
+                rows: number('pattern-rows'),
+                needleSize: value('pattern-needle-size'),
+                yardage: number('pattern-yardage'),
+                sizes: value('pattern-sizes'),
+                fiber: value('pattern-fiber'),
+                photoUrl: value('pattern-photo-url') ? getSafeWebUrl(value('pattern-photo-url')) : null,
+                photoCredit: value('pattern-photo-credit')
+            };
+            const yarn = {
+                stitches: number('y2p-stitches'),
+                rows: number('y2p-rows'),
+                weight: value('y2p-weight'),
+                yardage: number('y2p-yardage'),
+                fiber: value('y2p-fiber').toLowerCase(),
+                skeinYardage: number('y2p-skein-yardage')
+            };
+            const result = document.getElementById('y2p-result');
+            result.replaceChildren();
+            result.classList.remove('hidden');
+
+            if (!pattern.title || !pattern.designer || !pattern.url || !pattern.craft ||
+                !pattern.itemType || !pattern.weight || !pattern.stitches ||
+                !pattern.needleSize || !pattern.yardage || !pattern.sizes ||
+                !yarn.stitches || !yarn.weight || !yarn.yardage) {
+                result.textContent = 'Please enter the required yarn and pattern details, including a valid pattern website link.';
+                result.className = 'result-box warning';
+                return;
+            }
+            if (value('pattern-photo-url') && (!pattern.photoUrl || !pattern.photoCredit)) {
+                result.textContent = 'Use a valid HTTPS/HTTP photo URL and include its credit, or leave both photo fields blank.';
+                result.className = 'result-box warning';
+                return;
+            }
+
+            const weightOrder = ['lace', 'fingering', 'sport', 'dk', 'worsted', 'aran', 'bulky', 'super-bulky', 'jumbo'];
+            const yarnWeightIndex = weightOrder.indexOf(yarn.weight);
+            const patternWeightIndex = weightOrder.indexOf(pattern.weight);
+            const weightMatch = yarnWeightIndex < 0 || patternWeightIndex < 0
+                ? 50
+                : Math.max(0, 100 - Math.abs(yarnWeightIndex - patternWeightIndex) * 25);
+            const gaugeScore = (actual, target) => Math.max(0, 100 - Math.abs(actual - target) / target * 100);
+            let gaugeMatch = gaugeScore(yarn.stitches, pattern.stitches);
+            if (yarn.rows && pattern.rows) {
+                gaugeMatch = gaugeMatch * 0.75 + gaugeScore(yarn.rows, pattern.rows) * 0.25;
+            }
+            const yardageMatch = Math.min(100, yarn.yardage / pattern.yardage * 100);
+            const fiberMatch = !yarn.fiber || !pattern.fiber
+                ? 100
+                : (yarn.fiber.includes(pattern.fiber.toLowerCase()) || pattern.fiber.toLowerCase().includes(yarn.fiber) ? 100 : 50);
+            const compatibility = Math.round(gaugeMatch * 0.40 + weightMatch * 0.25 + yardageMatch * 0.20 + fiberMatch * 0.15);
+
+            result.className = 'result-box';
+            const heading = document.createElement('h3');
+            heading.textContent = `${pattern.title} — ${compatibility}% compatible`;
+            result.appendChild(heading);
+            appendPatternDetail(result, 'Designer / source', pattern.designer);
+            appendPatternDetail(result, 'Craft', pattern.craft);
+            appendPatternDetail(result, 'Finished item', pattern.itemType);
+            appendPatternDetail(result, 'Yarn weight', pattern.weight);
+            appendPatternDetail(result, 'Gauge', `${pattern.stitches} stitches${pattern.rows ? `, ${pattern.rows} rows` : ''} per 4 inches`);
+            appendPatternDetail(result, pattern.craft === 'crochet' ? 'Hook size' : 'Needle size', pattern.needleSize);
+            appendPatternDetail(result, 'Required yarn', `${pattern.yardage} yards${yarn.skeinYardage ? ` (about ${Math.ceil(pattern.yardage / yarn.skeinYardage)} of your skeins)` : ''}`);
+            appendPatternDetail(result, 'Sizes', pattern.sizes);
+            const link = document.createElement('a');
+            link.href = pattern.url;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.textContent = `View pattern on ${pattern.designer}'s website`;
+            result.appendChild(link);
+            if (pattern.photoUrl) {
+                const image = document.createElement('img');
+                image.src = pattern.photoUrl;
+                image.alt = `${pattern.title} — credited to ${pattern.photoCredit}`;
+                image.loading = 'lazy';
+                image.style.display = 'block';
+                image.style.maxWidth = '100%';
+                image.style.height = 'auto';
+                image.style.objectFit = 'contain';
+                image.style.marginTop = '16px';
+                result.appendChild(image);
+                appendPatternDetail(result, 'Photo credit', pattern.photoCredit);
+            }
+            const disclaimer = document.createElement('p');
+            disclaimer.className = 'info-text';
+            disclaimer.textContent = 'Compatibility is an estimate, not a guarantee. Swatch and compare with the pattern gauge before starting.';
+            result.appendChild(disclaimer);
         }
 
         function searchPatternToYarns() {
