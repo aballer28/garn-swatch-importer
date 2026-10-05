@@ -8,6 +8,8 @@ The first source adapter is designed around Yarnspirations and its brands, inclu
 
 This first commit deliberately uses normalized sample data rather than scraping or claiming live inventory. Before importing production catalog or stock data, obtain permission or use an approved feed/API and respect the site's terms and robots rules.
 
+The brand directory also includes Kelbourne Woolens, Koigu, Knitting for Olive, Quince & Co., and Luca-S. These are name-only listings; product details, availability, and images are omitted until verified and authorized.
+
 ## Interactive CLI Tool
 
 Run the interactive CLI:
