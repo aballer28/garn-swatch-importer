@@ -43,6 +43,11 @@ const brands = getAllBrands();
 assert(Array.isArray(brands), 'brands should be an array');
 assert(brands.length > 0, 'should return brands list');
 assert(brands[0].brand && typeof brands[0].count === 'number', 'brands entries should have brand and count');
+for (const brand of ['Kelbourne Woolens', 'Koigu', 'Knitting for Olive', 'Quince & Co.', 'Luca-S']) {
+  const listing = brands.find(entry => entry.brand === brand);
+  assert(listing, `${brand} should be listed in the catalog`);
+  assert.strictEqual(listing.count, 0, `${brand} should not have unverified yarn records`);
+}
 console.log(`  ✓ getAllBrands returned ${brands.length} brands`);
 
 const catalog = loadUnifiedCatalog();
